@@ -1,5 +1,5 @@
 import emojiReducer from './emojiReducer';
-import { drinkCoffee, eatSnack } from '../actions/emojiActions';
+import { drinkCoffee, eatSnack, takeNap } from '../actions/emojiActions';
 
 describe('emoji reducers', () => {
   it('handles drink coffee action', () => {
@@ -14,5 +14,12 @@ describe('emoji reducers', () => {
     const eatASnack = eatSnack();
     const newState = emojiReducer(state, eatASnack);
     expect(newState).toEqual({ snacks: 1 });
+  });
+
+  it('handles take a nap action', () => {
+    const state = { naps: 0 };
+    const takeANap = takeNap();
+    const newState = emojiReducer(state, takeANap);
+    expect(newState).toEqual({ naps: 1 });
   });
 });

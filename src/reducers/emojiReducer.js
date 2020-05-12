@@ -1,6 +1,7 @@
 const initialState = { 
   coffee: 0, 
-  snacks: 0
+  snacks: 0,
+  naps: 0
 };
 
 export default function emojiReducer(state = initialState, action) {
