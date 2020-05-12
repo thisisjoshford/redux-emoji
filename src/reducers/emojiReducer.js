@@ -15,6 +15,8 @@ export default function emojiReducer(state = initialState, action) {
       return { naps: state.naps + 1 };
     case 'STUDY':
       return { studies: state.studies + 1 };
+    default:
+      return state;
   }
 }
 
