@@ -10,6 +10,8 @@ export default function emojiReducer(state = initialState, action) {
       return { coffee: state.coffee + 1 };
     case 'EAT_SNACK':
       return { snacks: state.snacks + 1 };
+    case 'TAKE_NAP':
+      return { naps: state.naps + 1 };
   }
 }
 
