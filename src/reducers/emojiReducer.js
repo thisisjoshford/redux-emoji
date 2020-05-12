@@ -8,15 +8,14 @@ const initialState = {
 export default function emojiReducer(state = initialState, action) {
   switch(action.type) {
     case 'DRINK_COFFEE':
-      return { coffee: state.coffee + 1 };
+      return { ...state, coffee: state.coffee + 1 };
     case 'EAT_SNACK':
-      return { snacks: state.snacks + 1 };
+      return { ...state, snacks: state.snacks + 1 };
     case 'TAKE_NAP':
-      return { naps: state.naps + 1 };
+      return { ...state, naps: state.naps + 1 };
     case 'STUDY':
-      return { studies: state.studies + 1 };
+      return { ...state, studies: state.studies + 1 };
     default:
       return state;
   }
 }
-
