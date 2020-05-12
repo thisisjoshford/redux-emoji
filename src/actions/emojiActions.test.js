@@ -1,4 +1,4 @@
-import { drinkCoffee, eatSnack, takeNap } from './emojiActions';
+import { drinkCoffee, eatSnack, takeNap, study } from './emojiActions';
 
 describe('emoji actions', () => {
   it('drinks a coffee', () => {
@@ -17,7 +17,6 @@ describe('emoji actions', () => {
     });
   });
 
-
   it('takes a nap', () => {
     const takesANap = takeNap();
 
@@ -25,5 +24,14 @@ describe('emoji actions', () => {
       type: 'TAKE_NAP',
     });
   });
+
+  it('does some studying', () => {
+    const studySomeStuff = study();
+
+    expect(studySomeStuff).toEqual({
+      type: 'STUDY',
+    });
+  });
+
 });
 
