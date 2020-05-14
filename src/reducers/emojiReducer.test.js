@@ -4,7 +4,7 @@ import { drinkCoffee, eatSnack, takeNap, study } from '../actions/emojiActions';
 describe('emoji reducers', () => {
   it('handles drink coffee action', () => {
     const state = { 
-      coffee: 0, 
+      coffees: 0, 
       snacks: 0, 
       naps: 2, 
       studies: 3 
@@ -12,7 +12,7 @@ describe('emoji reducers', () => {
     const drink1Coffee = drinkCoffee();
     const newState = emojiReducer(state, drink1Coffee);
     expect(newState).toEqual({ 
-      coffee: 1, 
+      coffees: 1, 
       snacks: 0, 
       naps: 2,
       studies: 3 
