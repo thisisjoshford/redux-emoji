@@ -3,34 +3,35 @@ import { useSelector, useDispatch } from 'react-redux';
 import Controls from '../components/controls/Controls';
 import Face from '../components/face/Face';
 import { drinkCoffee, eatSnack, takeNap, study } from '../actions/emojiActions';
-
+import { getFace, getEmojiState } from '../selectors/selectors';
 
 const Moods = () => {
   const dispatch = useDispatch();
-
-  // const { coffees, snacks, naps, studies } = this.state;
-  const face = getFace(this.state);
+  const face = useSelector(getFace);
+  const emojiState = useSelector(getEmojiState);
 
   return (
     <>
       <Controls>
         <button 
           onClick={() => dispatch(drinkCoffee())}
-        >coffee - {coffees}
+        >coffee - {emojiState.coffees}
         </button>
         <button 
           onClick={() => dispatch(eatSnack())}
-        >snacks - {snacks}
+        >snacks - {emojiState.snacks}
         </button>
         <button 
           onClick={() => dispatch(takeNap())}
-        >naps - {naps}
+        >naps - {emojiState.naps}
         </button>
         <button onClick={() => dispatch(study())}
-        >studies - {studies}
+        >studies - {emojiState.studies}
         </button>
       </Controls>
       <Face emoji={face} />
     </>
   );
 };
+
+export default Moods;
