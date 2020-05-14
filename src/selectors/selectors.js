@@ -1,11 +1,11 @@
 export const isTired = state => 
-  state.coffees < 1 && state.naps < 1;
+  state.emojiState.coffees < 1 && state.naps < 1;
 export const isHyper = state => 
-  state.coffees > 3;
+  state.emojiState.coffees > 3;
 export const isEducated = state => 
-  state.studies > 2;
+  state.emojiState.studies > 2;
 export const isHungry = state => 
-  state.snacks < 1;
+  state.emojiState.snacks < 1;
 
 export const getFace = state => {
   if(isTired(state) && isHungry(state)) return '🤬';
